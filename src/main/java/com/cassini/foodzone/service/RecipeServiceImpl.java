@@ -41,6 +41,9 @@ public class RecipeServiceImpl implements RecipeService {
 	public AddRecipeResponseDto addRecipe(AddRecipeRequest addRecipeRequest) {
 		Recipe recipe = new Recipe();
 		BeanUtils.copyProperties(addRecipeRequest, recipe);
+		Vendor vendor = new Vendor();
+		vendor.setVendorId(addRecipeRequest.getVendorId());
+		recipe.setVendor(vendor);
 		recipeRepository.save(recipe);
 		AddRecipeResponseDto addRecipeResponseDto = new AddRecipeResponseDto();
 		addRecipeResponseDto.setRecipeId(recipe.getRecipeId());

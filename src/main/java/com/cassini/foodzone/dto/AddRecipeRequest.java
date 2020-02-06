@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class AddRecipeRequest {
 	
-	private String name;
+	private String recipeName;
 	private Double unitPrice;
 	private Integer vendorId;
 
